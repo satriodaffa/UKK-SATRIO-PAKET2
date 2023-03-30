@@ -17,12 +17,12 @@
 
     <table class="table"  border="1">
         <tr>
-            <th><img src="asset/images/masyarakat.png"></th>
+            <th> <img src="logo/assets/images\masyarakat.png" width="40" height="40"></th>
             <th>APLIKASI PENGADUAN MASYARAKAT KAMPUNG BAKOM SARI</th>
         </tr>
     </table>
         <h5>Laporan Pengaduan Masyarakat</h5>
-        <h6>Periode: {{ date('d-m-y') }}</h6>
+        <h6>Periode: {{ $from }} -- {{ $to }} </h6>
     </div>
     <div class="container" style="margin-right: 200px">
         <table class="table" border="1">
@@ -46,10 +46,8 @@
                         <td>{{ $v->nama }}</td>
                         <td>{{ $v->tgl_pengaduan }}</td>
                         <td>{{ $v->isi_laporan }}</td>
-                        @foreach ($tanggapan as $p)
-                        <td>{{ $p->tanggapan}}</td> 
-                        <td>{{ $p->tgl_tanggapan }}</td> 
-                        @endforeach
+                        <td>{{ $v->tanggapan['tanggapan']}}</td> 
+                        <td>{{ $v->tanggapan['tgl_tanggapan'] }}</td>
                         <td>{{ $v->status == '0' ? 'Pending' : ucwords($v->status) }}</td>
                     </tr>
                 @endforeach

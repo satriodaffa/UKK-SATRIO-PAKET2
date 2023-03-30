@@ -26,6 +26,8 @@ Route::get('/welcome', function () {
 
 Route::get('/', [UserController::class, 'index'])->name('pekat.index');
 
+Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard.user');
+
 Route::get('login-user', [UserController::class, 'loginuser'])->name('login-user');
 
 Route::post('login.user', [UserController::class, 'login'])->name('login.user');

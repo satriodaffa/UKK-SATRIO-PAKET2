@@ -26,7 +26,7 @@
 						<div class="login-wrap p-4 p-md-5">
 			      	<div class="d-flex">
 			      		<div class="w-100">
-			      			<h3 class="mb-4">Login</h3>
+			      			<h3 class="mb-4">Masuk</h3>
 			      		</div>
 			      	</div>
 						<form action="{{ route('login.user') }}" class="signin-form" method="POST">
@@ -41,7 +41,7 @@
 		              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 		            </div>
 		            <div class="form-group">
-		            	<button type="submit" class="form-control btn btn-primary rounded submit px-3">Login</button>
+		            	<button type="submit" class="form-control btn btn-primary rounded submit px-3">Masuk</button>
 		            </div>
 		          </form>
 		          <p class="text-center">Belum punya akun? <a class="small" href="{{route('pekat.formRegister')}}">Registrasi</a></p>

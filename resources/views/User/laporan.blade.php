@@ -71,6 +71,7 @@
       <nav id="navbar" class="navbar">
         @if (Auth::guard('masyarakat')->check())
         <ul>
+            <li><a class="nav-link scrollto" href="{{ route('dashboard.user') }}">Dashboard</a></li>
             <li><a class="nav-link scrollto" href="{{ route('pekat.laporan') }}">Laporan</a></li>
             <li><a class="getstarted scrollto" href="{{ route('pekat.logout') }}">{{ Auth::guard('masyarakat')->user()->nama }}</a></li>
         </ul>
@@ -230,7 +231,7 @@
                   @foreach ($pengaduan as $k => $v)
                   <tr>
                       <td>{{ $k += 1 }}</td>
-                      <td>{{ $v->tgl_pengaduan->format('d-M-Y') }}</td>
+                      <td>{{ $v->tgl_pengaduan }}</td>
                       <td>{{ $v->isi_laporan }}</td>
                       <td>
                           @if ($v->status == '0')

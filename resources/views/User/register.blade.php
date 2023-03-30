@@ -63,7 +63,7 @@
                     </select>
                     </div>
                     <div class="form-group mt-3">
-                        <input type="text" class="form-control" name="alamat" required>
+                        <textarea name="alamat" class="form-control"  required></textarea>
                         <label class="form-control-placeholder" for="alamat">Alamat</label>
                     </div>
 		            <div class="form-group">

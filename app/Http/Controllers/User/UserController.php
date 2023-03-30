@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Models\Pengaduan;
 use App\Models\Tanggapan;
 use App\Models\Masyarakat;
+use App\Models\Petugas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+    
     public function index()
     {
         // Menghitung jumlah pengaduan yang ada di table
@@ -22,6 +24,19 @@ class UserController extends Controller
 
         // Arahkan ke file user/landing.blade.php
         return view('user.landing', ['pengaduan' => $pengaduan , 'tanggapan' => $tanggapan]);
+    }
+
+    public function dashboard()
+    {
+        $pending = Pengaduan::where('status', '0')->get()->count();
+
+        $proses = Pengaduan::where('status', 'proses')->get()->count();
+
+        $selesai = Pengaduan::where('status', 'selesai')->get()->count();
+
+        $tanggapan = Tanggapan::all()->count();
+
+        return view('User.dashboard', ['pending' => $pending,  'proses' => $proses, 'selesai' => $selesai, 'tanggapan' => $tanggapan]);
     }
 
     public function loginuser()
@@ -50,7 +65,7 @@ class UserController extends Controller
             // Jalankan fungsi auth jika berjasil melewati validasi di atas
             if (Auth::guard('masyarakat')->attempt(['username' => $request->username, 'password' => $request->password])) {
                 // Jika login berhasil
-                return redirect()->route('pekat.index')->with(['login' => 'Berhasil Login', 'type' => 'success']);
+                return redirect()->route('dashboard.user')->with(['login' => 'Berhasil Login', 'type' => 'success']);
             } else {
                 // Jika login gagal
                 return redirect()->back()->with(['pesan' => 'Akun tidak terdaftar!']);

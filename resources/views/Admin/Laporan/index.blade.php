@@ -55,10 +55,9 @@
                                         <td>{{ $v->nama }}</td>
                                         <td>{{ $v->tgl_pengaduan }}</td>
                                         <td>{{ $v->isi_laporan }}</td>
-                                        @foreach($tanggapan as $p)
-                                        <td>{{ $p->tanggapan}}</td>  
-                                        <td>{{ $p->tgl_tanggapan }}</td>  
-                                        @endforeach
+                                        <td>{{ $v->tanggapan['tanggapan']}}</td>  
+                                        <td>{{ $v->tanggapan['tgl_tanggapan']}}</td>  
+                          
                                         <td>
                                             @if ($v->status == '0')
                                                 <a href="" class="badge badge-danger">Pending</a>

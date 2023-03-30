@@ -31,7 +31,7 @@ class LaporanController extends Controller
         $pengaduan = Pengaduan::whereBetween('tgl_pengaduan', [$from, $to])->get();
         $tanggapan = Tanggapan::whereBetween('tgl_tanggapan', [$from, $to])->get();
 
-        $pdf = PDF::loadView('Admin.Laporan.cetak', ['pengaduan' => $pengaduan, 'tanggapan' => $tanggapan]);
+        $pdf = PDF::loadView('Admin.Laporan.cetak', ['pengaduan' => $pengaduan, 'from' => $from, 'to' => $to], ['tanggapan' => $tanggapan, 'from' => $from, 'to' => $to]);
         return $pdf->download('laporan-pengaduan.pdf');
     }
 }

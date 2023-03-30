@@ -6,8 +6,18 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
 @endsection
 
-@section('header', 'Data Masyarakat')
-    
+@section('header')
+ Data Masyarakat
+ <div class="row">
+    <h6>
+    @if (session('success'))
+    <div class = "alert alert-error alert-dismissible fade show" role="alert">
+           {{session('success')}}
+   </div>
+   @endif
+</h6>
+</div>
+@endsection   
 @section('content')
     <table id="masyarakatTable" class="table">
         <thead>

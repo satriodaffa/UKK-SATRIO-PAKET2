@@ -97,76 +97,61 @@
   </section><!-- End Hero -->
 
   <main id="main">
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-
-      <div class="container" data-aos="fade-up">
-        <div class="row gx-0">
-
-          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="content">
-           
-              <h2>Panduan Penggunaan Web Pengaduan Masyarakat </h2>
-              <p>
-                1. Silahkan Register terlebih Dahulu
-                <br>
-                2. Jika Sudah Register Silahkan untuk Login 
-                <br>
-                3. Jika Sudah Login Silahkan Untuk Masuk Halaman Laporan
-                <br>
-                4. Setelah itu Masukan Laporan atau Aduan yang ingin diajukan
-                <br>
-                5. Setelah itu Klik Kirim 
-                <br>
-                6.Silahkan Tunggu Tanggapan Dari Admin
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-            <img src="user/assets/img/about.jpg" class="img-fluid" alt="">
-          </div>
-
-        </div>
-      </div>
-
-    </section><!-- End About Section -->
-
     
-
-    <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
+     <!-- ======= Counts Section ======= -->
+     <section id="counts" class="counts">
       <div class="container" data-aos="fade-up">
 
-        <div class="row gy-6">
-            <center>
+        <div class="row gy-4">
+
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
               <div>
-
-                <span data-purecounter-start="0" data-purecounter-end="{{ $pengaduan }}" data-purecounter-duration="1" class="purecounter"></span>
-
-                <p>Jumlah Laporan</p>
+                <span data-purecounter-start="0" data-purecounter-end="{{ $pending }}" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Pengaduan Pending</p>
               </div>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
-              <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="{{ $proses }}" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Pengaduan Proses</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="{{ $selesai }}" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Pengaduan Selesai</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
               <div>
                 <span data-purecounter-start="0" data-purecounter-end="{{ $tanggapan }}" data-purecounter-duration="1" class="purecounter"></span>
-                <p> Jumlah Tanggapan</p>
+                <p>Tanggapan</p>
               </div>
             </div>
           </div>
-            </center>
+
         </div>
 
       </div>
     </section><!-- End Counts Section -->
+    
+    
+ 
 
+
+    
+
+   
     
 
         
